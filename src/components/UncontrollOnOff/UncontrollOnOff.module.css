@@ -1,0 +1,33 @@
+.wrapper {
+    width: 130px;
+}
+
+.on_off_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.on_off {
+    width: 20px;
+    height: 20px;
+    border: solid 1px black;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border: solid 1px black;
+    border-radius: 50%;
+}
+
+.green {
+    background-color: chartreuse;
+}
+
+.red {
+    background-color: crimson;
+}

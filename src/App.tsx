@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {ControlAccordion} from "./components/ControllAccordion/ControlAccordion";
+import {UncontrolRating} from "./components/UncontrollRating/UncontrollRating";
+import {ControlOnOff} from './components/ControllOnOff/ControlOnOff'
+import {UncontrollOnOff} from './components/UncontrollOnOff/UncontrollOnOff'
+import {Rating} from './components/Rating/Rating'
+import {UncontrollAccordion} from './components/UncontrollAccordion/UncontrollAccordion'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    console.log('App rendering')
+    return (
+        <div>
+            <PageTitle title={"This is App component"}/>
+
+            <ControlAccordion title={"Menu"} collapsed={true}/>
+            <UncontrollAccordion title={"Users"} />
+
+            <Rating star={5} value={4}/>
+            <UncontrolRating/>
+
+            <ControlOnOff clicked={true}/>
+            <UncontrollOnOff />
+        </div>
+    );
+}
+
+type PageTitlePropsType = {
+    title: string
+}
+
+const PageTitle = (props: PageTitlePropsType) => {
+    console.log('PageTitle rendering')
+
+    return <h1>{props.title}</h1>
 }
 
 export default App;
