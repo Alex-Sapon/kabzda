@@ -9,8 +9,8 @@ export default {
 
 const Template: Story<RatingType> = (args) => <Rating {...args}/>
 
-export const UserControlRating = Template.bind({})
-UserControlRating.args = {
+export const UserRating = Template.bind({})
+UserRating.args = {
     star: 5,
     value: 4
 }

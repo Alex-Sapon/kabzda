@@ -1,40 +1,22 @@
 import React, {FC, useState} from "react";
+import {AccordionBody, ItemType} from '../AccordionBody/AccordionBody';
+import {AccordionTitle} from '../AccordionTitle/AccordionTitle';
 
-type UncontrollAccordionType = {
+export type UncontrollAccordionType = {
     title: string
+    items: ItemType[]
+    onClick?: (value: number) => void
 }
 
-export const UncontrollAccordion: FC<UncontrollAccordionType> = ({title}) => {
+export const UncontrollAccordion: FC<UncontrollAccordionType> = ({title, items, onClick}) => {
     console.log('UncontrollAccordion rendering')
     const [collapse, setCollapse] = useState<boolean>(false)
 
     return (
         <div>
-            <AccordionTitle title={title} onClick={() => setCollapse(!collapse)}/>
-            {collapse && <AccordionBody/>}
+            <AccordionTitle title={title} callBack={() => setCollapse(!collapse)}/>
+            {collapse && <AccordionBody onClick={onClick!} items={items}/>}
         </div>
     )
-}
-
-type AccordionTitleProps = {
-    title: string
-    onClick?: () => void
-}
-
-const AccordionTitle: FC<AccordionTitleProps> = ({title, onClick}) => {
-    console.log('AccordionTitle rendering')
-    return <h3 onClick={onClick}>{title}</h3>
-}
-
-const AccordionBody = () => {
-    console.log('AccordionBody')
-
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    );
 }
 

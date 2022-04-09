@@ -3,7 +3,7 @@ import {Story} from '@storybook/react';
 import {UncontrolRating} from './UncontrollRating';
 
 export default {
-    title: 'components/UncontrolRating',
+    title: 'components/Rating',
     component: UncontrolRating
 }
 
